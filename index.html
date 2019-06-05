@@ -42,6 +42,10 @@
       text-align: center;
     }
 
+    .text-left {
+      text-align: left;
+    }
+
   </style>
 
   <!-- Printing and PDF exports -->
@@ -217,6 +221,44 @@
         - Use a [contrast ratio calculator](https://contrast-ratio.com/)
         - Review color contrast issues reported by automated test tool
         ([aXe](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd))
+      </section>
+
+      <!-- 3. Text alternatives -->
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Text alternatives
+
+        [WCAG 1.1.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html): Non-text content has text
+        alternative.
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <p class="text-left">
+          If an image conveys meaning, write effective alternate text.
+        </p>
+
+        <p class="text-left">
+          If an image is decorative, use <code>alt=""</code>.
+        </p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <p class="text-center">
+          <a href="https://story.maps.arcgis.com/apps/MapJournal/index.html?appid=2b1c793f464b4cd2944a0b9700c0dc48">Example
+            of descriptive alt text</a>
+        </p>
+        <p class="text-center">
+          <a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-basemapgallery/live/index.html">Example
+            of empty alt text</a>
+        </p>
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Write effective alternate text
+
+        - Think about how users will be doing with the information
+        - Be accurate in presenting the content in images
+        - Be succinct
+        - No need to use the phrase "image of ..." to describe images
       </section>
 
 
