@@ -1,106 +1,133 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
 
-    <title>Accessible Web Mapping Apps</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/uc2019.css" />
+  <title>Accessible Web Mapping Apps</title>
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/monokai.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/reveal.css" />
+  <link rel="stylesheet" href="css/theme/uc2019.css" />
 
-    <!-- Custom style for this presentation -->
-    <style>
-      .subtitle {
-        font-size: 0.9em;
-      }
-      ul.presenters {
-        margin: 1em 0 2.5em 0;
-        line-height: 1.45;
-        font-size: 1.1em;
-      }
-      .presenters li {
-        list-style: none;
-      }
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css" />
 
-      /* Utilities */
-      .text-center {
-        text-align: center;
-      }
-    </style>
+  <!-- Custom style for this presentation -->
+  <style>
+    .subtitle {
+      font-size: 0.9em;
+    }
 
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = window.location.search.match(/print-pdf/gi)
-        ? "css/print/pdf.css"
-        : "css/print/paper.css";
-      document.getElementsByTagName("head")[0].appendChild(link);
-    </script>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <!-- Title slide -->
-        <section
-          data-background="images/backgrounds/bg-1.png"
-          data-background-size="cover"
-        >
-          <h1>Accessible Web Mapping Apps</h1>
-          <p class="subtitle">ARIA, WCAG and 508 Compliance</p>
-          <ul class="presenters">
-            <li>Kelly Hutchins</li>
-            <li>Tao Zhang</li>
-          </ul>
-        </section>
+    ul.presenters {
+      margin: 1em 0 2.5em 0;
+      line-height: 1.45;
+      font-size: 1.1em;
+    }
 
-        <section
-          data-markdown
-          data-background="images/backgrounds/content-bg.png"
-        >
-          ## What is accessibility
+    .presenters li {
+      list-style: none;
+    }
 
-          <p class="text-center">
-            Make content usable for everyone regardless of abilities.
-          </p>
-        </section>
+    /* Utilities */
+    .text-center {
+      text-align: center;
+    }
 
-        <section data-background="images/backgrounds/content-bg.png">
-          <h2>Wide range of disabilities</h2>
+  </style>
 
-          <img
-            src="images/disabilities.png"
-            alt="A wide range of disabilities: permanent, temporary, and situational"
-            style="width: 65%; height: 65%;"
-          />
-        </section>
-      </div>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = window.location.search.match(/print-pdf/gi) ?
+      "css/print/pdf.css" :
+      "css/print/paper.css";
+    document.getElementsByTagName("head")[0].appendChild(link);
+
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Title slide -->
+      <section data-background="images/backgrounds/bg-1.png" data-background-size="cover">
+        <h1>Accessible Web Mapping Apps</h1>
+        <!-- <p class="subtitle">ARIA, WCAG and 508 Compliance</p> -->
+        <ul class="presenters">
+          <li>Kelly Hutchins</li>
+          <li>Tao Zhang</li>
+        </ul>
+      </section>
+
+      <!-- Markdown slide -->
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## What is accessibility
+
+        <p class="text-center">
+          Make content usable for everyone regardless of abilities.
+        </p>
+      </section>
+
+      <!-- HTML slide -->
+      <section data-background="images/backgrounds/content-bg.png">
+        <h2>Wide range of disabilities</h2>
+        <img src="images/disabilities.png" alt="A wide range of disabilities: permanent, temporary, and situational"
+          style="width: 65%; height: 65%;" />
+      </section>
+
+      <!-- Markdown slide -->
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## Why is accessibility important?
+
+        - The ADA and Section 508
+        - People with different abilities should have equal access
+        - Good accessibility is good user experience
+      </section>
+
+
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## How is Esri doing?
+
+        - Reviewing products internally for compliance
+        - Fixing accessibility issues
+        - Building accessible components, features, and apps
+        - Sharing knowledge and best practices
+      </section>
+
+
     </div>
+  </div>
 
-    <script src="js/reveal.js"></script>
+  <script src="js/reveal.js"></script>
 
-    <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.initialize({
-        history: true,
-        dependencies: [
-          { src: "plugin/markdown/marked.js" },
-          { src: "plugin/markdown/markdown.js" },
-          { src: "plugin/notes/notes.js", async: true },
-          { src: "plugin/highlight/highlight.js", async: true }
-        ]
-      });
-    </script>
-  </body>
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      history: true,
+      dependencies: [{
+          src: "plugin/markdown/marked.js"
+        },
+        {
+          src: "plugin/markdown/markdown.js"
+        },
+        {
+          src: "plugin/notes/notes.js",
+          async: true
+        },
+        {
+          src: "plugin/highlight/highlight.js",
+          async: true
+        }
+      ]
+    });
+
+  </script>
+</body>
+
 </html>
