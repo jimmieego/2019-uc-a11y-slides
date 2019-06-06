@@ -27,7 +27,7 @@ body {
 
 .reveal {
   font-family: "Avenir Next", Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: normal;
   color: #fff;
 }
@@ -71,20 +71,20 @@ body {
 }
 
 .reveal h1 {
-  font-size: 2em;
+  font-size: 1.6em;
   text-shadow: none;
 }
 
 .reveal h2 {
-  font-size: 1.6em;
+  font-size: 1.45em;
 }
 
 .reveal h3 {
-  font-size: 1.3em;
+  font-size: 1.25em;
 }
 
 .reveal h4 {
-  font-size: 1.2em;
+  font-size: 1.15em;
 }
 
 /*********************************************
@@ -126,6 +126,11 @@ body {
 
 .reveal ul {
   list-style-type: disc;
+}
+
+.reveal ul li {
+  line-height: 1.3;
+  margin-bottom: 1.05rem;
 }
 
 .reveal ul ul {
@@ -211,7 +216,7 @@ body {
 .reveal table th,
 .reveal table td {
   text-align: left;
-  padding: 0.2em 0.5em 0.2em 0.5em;
+  padding: 0.4em 0.5em 0.4em 0.5em;
   border-bottom: 1px solid;
 }
 
@@ -279,7 +284,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #fff;
+  /* border: 4px solid #fff; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 

@@ -1,96 +1,500 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
 
-    <title>Accessible Web Mapping Apps</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/uc2019.css" />
+  <title>Accessible Web Mapping Apps</title>
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/monokai.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/reveal.css" />
+  <link rel="stylesheet" href="css/theme/uc2019.css" />
 
-    <!-- Custom style for this presentation -->
-    <style>
-      .subtitle {
-        font-size: 0.9em;
-      }
-      ul.presenters {
-        margin: 1em 0 2.5em 0;
-        line-height: 1.45;
-        font-size: 1.1em;
-      }
-      .presenters li {
-        list-style: none;
-      }
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css" />
 
-      /* Utilities */
-      .text-center {
-        text-align: center;
-      }
-    </style>
+  <!-- Custom style for this presentation -->
+  <style>
+    .subtitle {
+      font-size: 0.9em;
+    }
 
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = window.location.search.match(/print-pdf/gi)
-        ? "css/print/pdf.css"
-        : "css/print/paper.css";
-      document.getElementsByTagName("head")[0].appendChild(link);
-    </script>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <!-- Title slide -->
-        <section
-          data-background="images/backgrounds/bg-1.png"
-          data-background-size="cover"
-        >
-          <h1>Accessible Web Mapping Apps</h1>
-          <p class="subtitle">ARIA, WCAG and 508 Compliance</p>
-          <ul class="presenters">
-            <li>Kelly Hutchins</li>
-            <li>Tao Zhang</li>
-          </ul>
-        </section>
+    ul.presenters {
+      margin: 1em 0 2.5em 0;
+      line-height: 1.45;
+      font-size: 0.875em;
+    }
 
-        <section
-          data-markdown
-          data-background="images/backgrounds/content-bg.png"
-        >
-          ## What is accessibility
+    .presenters li {
+      list-style: none;
+    }
 
-          <p class="text-center">
-            Make content usable for everyone regardless of abilities.
-          </p>
-        </section>
-      </div>
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(90deg, rgba(170, 7, 83, 0), rgba(224, 223, 224, .75), rgba(170, 7, 83, 0));
+      width: 35vw;
+    }
+
+    p.image-description {
+      font-size: 0.75em;
+      margin: 0 auto;
+      width: 30em;
+
+    }
+
+    .reveal .tight-list li {
+      margin-bottom: 0;
+    }
+
+    /* Utilities */
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+  </style>
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = window.location.search.match(/print-pdf/gi) ?
+      "css/print/pdf.css" :
+      "css/print/paper.css";
+    document.getElementsByTagName("head")[0].appendChild(link);
+
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Title slide -->
+      <section data-background="images/backgrounds/bg-1.png" data-background-size="cover">
+        <h1>Accessible Web Mapping Apps</h1>
+        <!-- <p class="subtitle">ARIA, WCAG and 508 Compliance</p> -->
+        <ul class="presenters">
+          <li>Kelly Hutchins</li>
+          <li>Tao Zhang</li>
+        </ul>
+      </section>
+
+      <!-- Markdown slide -->
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## What is accessibility
+
+        <p class="text-center">
+          Make content usable for everyone regardless of abilities.
+        </p>
+      </section>
+
+      <!-- HTML slide -->
+      <section data-background="images/backgrounds/content-bg.png">
+        <h2>Wide range of disabilities</h2>
+        <img src="images/disabilities.png" alt="A wide range of disabilities: permanent, temporary, and situational"
+          style="width: 65%; height: 65%;" />
+      </section>
+
+      <!-- Markdown slide -->
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## Why is accessibility important?
+
+        - The ADA and Section 508
+        - People with different abilities should have equal access
+        - Good accessibility is good user experience
+      </section>
+
+
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## How is Esri doing?
+
+        - Reviewing products internally for compliance
+        - Fixing accessibility issues
+        - Building accessible components, features, and apps
+        - Sharing knowledge and best practices
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## WCAG
+
+        <p class="text-center">
+          Web Content Accessibility Guidelines
+        </p>
+      </section>
+
+      <section data-background="images/backgrounds/content-bg.png">
+        <img src="images/wcag.png" alt="Screenshots of WCAG 2.0 and 2.1 official docs" />
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## What we will cover today
+
+        - Focus and keyboard accessibility
+        - Color and color contrast
+        - Text alternatives
+        - Map for non-sighted users
+        - Test for accessibility
+      </section>
+
+      <!-- 1. Focus and keyboard accessibility -->
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Focus and keyboard accessibility</h2>
+        <ul>
+          <li class="fragment"><a
+              href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">WCAG 2.4.7</a>:
+            Interactive elements should have clear focus.</li>
+          <li class="fragment"><a
+              href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-sequence.html">WCAG
+              1.3.2</a>: Navigation (tab) order should be logical and intuitive.</li>
+          <li class="fragment"><a
+              href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-keyboard-operable.html">WCAG
+              2.1.1</a>: Keyboard users should be able to use functionalities using keyboard only.</li>
+          <li class="fragment"><a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation-trapping.html">WCAG
+              2.1.2</a>: Content does not "trap" keyboard focus within subsections.</li>
+        </ul>
+      </section>
+
+      <section data-background="images/backgrounds/content-bg.png">
+        <p class="text-center">
+          <a href="https://jimmieego.github.io/Web-Accessibility-Best-Practices/demos/focus_and_tab_order/index.html">Demo:
+            Focus and tab order</a>
+        </p>
+      </section>
+
+      <section data-background="images/backgrounds/content-bg.png">
+        <p class="text-center">
+          <a href="https://jimmieego.github.io/Web-Accessibility-Best-Practices/images/modal_example.gif">Demo: Focus
+            trap in dialog</a>
+        </p>
+      </section>
+
+      <section data-background="images/backgrounds/content-bg.png">
+        <p class="text-center">
+          <a href="https://arcgis103.esri.ca/WCAG-Configurable-Template-Test/?appid=e951691e3893444ea64e7c29d086e30c">Example:
+            Accessible App of Electric Charging Stations</a>
+        </p>
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## Test focus and tab order
+
+        - Tab through page to verify all interactive elements have focus
+        - Focus order matches intended reading order
+        - Interact with all links and controls using only keyboard
+        - No keyboard trap except for modals
+        - Off-screen/invisible content should not receive focus
+      </section>
+
+      <!-- 2. Color and color contrast -->
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Color and color contrast</h2>
+        <ul>
+          <li class="fragment"><a
+              href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html">WCAG 1.4.1</a>:
+            Color is not the only visual means of conveying information.</li>
+          <li class="fragment"><a
+              href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">WCAG 1.4.3</a>: Text
+            needs to have contrast ratio of at least 4.5:1.</li>
+        </ul>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <p class="text-center">
+          <a href="https://jimmieego.github.io/Web-Accessibility-Best-Practices/demos/color-contrast/index.html">Demo:
+            Color and color contrast</a>
+        </p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>White text on colored background</h2>
+        <img src="images/color-example-1.png" alt="Example of white text on light colored background"
+          style="height: 40%; width:40%;">
+        <hr>
+        <img class="fragment" src="images/color-example-2.png" alt="Example of white text on dark colored background"
+          style="height: 40%; width:40%;">
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Flipping the contrast</h2>
+        <img src="images/color-example-3.png" alt="Example of black text on light colored background">
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/content-bg.png">
+        ## Test color and color contrast
+
+        - Look for content differentiated by color only
+        - Use a [contrast ratio calculator](https://contrast-ratio.com/)
+        - Review color contrast issues reported by automated test tool
+        ([aXe](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd))
+      </section>
+
+      <!-- 3. Text alternatives -->
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Text alternatives
+
+        [WCAG 1.1.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html): Non-text content has text
+        alternative.
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <p class="text-left">
+          If an image conveys meaning, write effective alternate text.
+        </p>
+
+        <p class="text-left">
+          If an image is decorative, use <code>alt=""</code>.
+        </p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <p class="text-center">
+          <a href="https://story.maps.arcgis.com/apps/MapJournal/index.html?appid=2b1c793f464b4cd2944a0b9700c0dc48">Example
+            of descriptive alt text</a>
+        </p>
+        <p class="text-center">
+          <a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-basemapgallery/live/index.html">Example
+            of empty alt text</a>
+        </p>
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Write effective alternate text
+
+        - Think about how users will be doing with the information
+        - Be accurate in presenting the content in images
+        - Be succinct
+        - No need to use the phrase "image of ..." to describe images
+      </section>
+
+      <!-- 4. Map for non-sighted users -->
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Map for non-sighted users
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Display a text description of the map</h2>
+        <img src="images/static-map.png" alt="Example of a static map" style="height: 58%; width: 58%;" />
+        <p class="image-description">The Esri Olympia regional office is located at 111 Market St NE Suite 250 across
+          the street from the Farmer's
+          Market.</p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Provide data in an alternate format</h2>
+
+        Add example here
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Default map navigation</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>MapView behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Arrow Keys</td>
+              <td>Nudge the view to left, right, up or down</td>
+            </tr>
+            <tr>
+              <td>N</td>
+              <td>Adjust the view to point north</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>Rotate the view counterclockwise</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>Rotate the view clockwise</td>
+            </tr>
+            <tr>
+              <td>+</td>
+              <td>Incrementally zoom in at the center of the map</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Incrementally zoom out at the center of the map</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="font-size: 0.75em; margin-top: 2.5rem;"><a
+            href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html</a>
+        </p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Map for non-sighted users</h2>
+
+        Add new info here
+      </section>
+
+      <!-- 5. Test for accessibility -->
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Test for accessibility
+
+        1. Automated test
+        2. Keyboard test
+        3. Screen reader test
+        4. Color test
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Automated test with <a href="https://www.deque.com/products/axe/">aXe</a></h2>
+        <img src="images/axe.png" alt="Screenshot of aXe extension in Chrome" />
+        <ul class="tight-list">
+          <li>Tests rendered page in browser</li>
+          <li>Less false positives</li>
+          <li>Accessible</li>
+        </ul>
+
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <p><a href="https://jimmieego.github.io/Web-Accessibility-Best-Practices/demos/map-demo/index.html">Demo:
+            Automated test using aXe</a></p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Keyboard test</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tab, Shift + Tab</td>
+              <td>Move keyboard focus</td>
+            </tr>
+            <tr>
+              <td>Enter</td>
+              <td>Click links</td>
+            </tr>
+            <tr>
+              <td>Enter, Space</td>
+              <td>Click buttons</td>
+            </tr>
+            <tr>
+              <td>Arrow keys</td>
+              <td>Move within menus, tabs, radio buttons</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Screen reader</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>OS</th>
+              <th>Screen reader</th>
+              <th>Browser</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MacOS</td>
+              <td><a href="https://www.apple.com/accessibility/mac/vision/">VoiceOver</a></td>
+              <td>Safari</td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td><a href="https://www.nvaccess.org/">NVDA</a></td>
+              <td>Firefox</td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td><a href="http://www.freedomscientific.com/Products/Blindness/JAWS">JAWS</a></td>
+              <td>IE/Edge</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Screen reader basics
+
+        - [A11ycasts: VoiceOver](https://youtu.be/5R-6WvAihms)
+        - [A11ycasts: NVDA](https://youtu.be/Jao3s_CwdRU)
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Color test
+
+        - Automated color contrast test results may need manual verification
+        - Look for information differentiated only by color
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## What we covered today
+
+        - Focus and keyboard accessibility
+        - Color and color contrast
+        - Text alternatives
+        - Map for non-sighted users
+        - Test for accessibility
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Additional resources
+
+        - [MDN: Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+        - [Google Developers Web Fundamentals:
+        Accessibility](https://developers.google.com/web/fundamentals/accessibility/)
+        - [The A11Y Project](https://a11yproject.com/)
+        - [GeoNet: Accessibility](https://community.esri.com/groups/accessibility)
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Questions?
+
+        Link to slides:
+      </section>
+
+
     </div>
+  </div>
 
-    <script src="js/reveal.js"></script>
+  <script src="js/reveal.js"></script>
 
-    <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.initialize({
-        history: true,
-        dependencies: [
-          { src: "plugin/markdown/marked.js" },
-          { src: "plugin/markdown/markdown.js" },
-          { src: "plugin/notes/notes.js", async: true },
-          { src: "plugin/highlight/highlight.js", async: true }
-        ]
-      });
-    </script>
-  </body>
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      history: true,
+      dependencies: [{
+          src: "plugin/markdown/marked.js"
+        },
+        {
+          src: "plugin/markdown/markdown.js"
+        },
+        {
+          src: "plugin/notes/notes.js",
+          async: true
+        },
+        {
+          src: "plugin/highlight/highlight.js",
+          async: true
+        }
+      ]
+    });
+
+  </script>
+</body>
+
 </html>
