@@ -37,6 +37,17 @@
       width: 35vw;
     }
 
+    p.image-description {
+      font-size: 0.75em;
+      margin: 0 auto;
+      width: 30em;
+
+    }
+
+    .reveal .tight-list li {
+      margin-bottom: 0;
+    }
+
     /* Utilities */
     .text-center {
       text-align: center;
@@ -121,7 +132,7 @@
         <img src="images/wcag.png" alt="Screenshots of WCAG 2.0 and 2.1 official docs" />
       </section>
 
-      <section data-markdown data-background="images/backgrounds/content-bg.png">
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
         ## What we will cover today
 
         - Focus and keyboard accessibility
@@ -259,6 +270,199 @@
         - Be accurate in presenting the content in images
         - Be succinct
         - No need to use the phrase "image of ..." to describe images
+      </section>
+
+      <!-- 4. Map for non-sighted users -->
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Map for non-sighted users
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Display a text description of the map</h2>
+        <img src="images/static-map.png" alt="Example of a static map" style="height: 58%; width: 58%;" />
+        <p class="image-description">The Esri Olympia regional office is located at 111 Market St NE Suite 250 across
+          the street from the Farmer's
+          Market.</p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Provide data in an alternate format</h2>
+
+        Add example here
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Default map navigation</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>MapView behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Arrow Keys</td>
+              <td>Nudge the view to left, right, up or down</td>
+            </tr>
+            <tr>
+              <td>N</td>
+              <td>Adjust the view to point north</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>Rotate the view counterclockwise</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>Rotate the view clockwise</td>
+            </tr>
+            <tr>
+              <td>+</td>
+              <td>Incrementally zoom in at the center of the map</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Incrementally zoom out at the center of the map</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="font-size: 0.75em; margin-top: 2.5rem;"><a
+            href="https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html">https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html</a>
+        </p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Map for non-sighted users</h2>
+
+        Add new info here
+      </section>
+
+      <!-- 5. Test for accessibility -->
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Test for accessibility
+
+        1. Automated test
+        2. Keyboard test
+        3. Screen reader test
+        4. Color test
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Automated test with <a href="https://www.deque.com/products/axe/">aXe</a></h2>
+        <img src="images/axe.png" alt="Screenshot of aXe extension in Chrome" />
+        <ul class="tight-list">
+          <li>Tests rendered page in browser</li>
+          <li>Less false positives</li>
+          <li>Accessible</li>
+        </ul>
+
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <p><a href="https://jimmieego.github.io/Web-Accessibility-Best-Practices/demos/map-demo/index.html">Demo:
+            Automated test using aXe</a></p>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Keyboard test</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tab, Shift + Tab</td>
+              <td>Move keyboard focus</td>
+            </tr>
+            <tr>
+              <td>Enter</td>
+              <td>Click links</td>
+            </tr>
+            <tr>
+              <td>Enter, Space</td>
+              <td>Click buttons</td>
+            </tr>
+            <tr>
+              <td>Arrow keys</td>
+              <td>Move within menus, tabs, radio buttons</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section data-background="images/backgrounds/section-bg.png">
+        <h2>Screen reader</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>OS</th>
+              <th>Screen reader</th>
+              <th>Browser</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MacOS</td>
+              <td><a href="https://www.apple.com/accessibility/mac/vision/">VoiceOver</a></td>
+              <td>Safari</td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td><a href="https://www.nvaccess.org/">NVDA</a></td>
+              <td>Firefox</td>
+            </tr>
+            <tr>
+              <td>Windows</td>
+              <td><a href="http://www.freedomscientific.com/Products/Blindness/JAWS">JAWS</a></td>
+              <td>IE/Edge</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Screen reader basics
+
+        - [A11ycasts: VoiceOver](https://youtu.be/5R-6WvAihms)
+        - [A11ycasts: NVDA](https://youtu.be/Jao3s_CwdRU)
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Color test
+
+        - Automated color contrast test results may need manual verification
+        - Look for information differentiated only by color
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## What we covered today
+
+        - Focus and keyboard accessibility
+        - Color and color contrast
+        - Text alternatives
+        - Map for non-sighted users
+        - Test for accessibility
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Additional resources
+
+        - [MDN: Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+        - [Google Developers Web Fundamentals:
+        Accessibility](https://developers.google.com/web/fundamentals/accessibility/)
+        - [The A11Y Project](https://a11yproject.com/)
+        - [GeoNet: Accessibility](https://community.esri.com/groups/accessibility)
+      </section>
+
+      <section data-markdown data-background="images/backgrounds/section-bg.png">
+        ## Questions?
+
+        Link to slides:
       </section>
 
 
