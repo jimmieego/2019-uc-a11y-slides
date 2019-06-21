@@ -52,6 +52,21 @@
       font-size: 0.75em;
     }
 
+    .reveal ul.block-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-column-gap: 20px;
+      font-size: 0.7em;
+    }
+
+    .reveal .block-list li {
+      border: 1px solid hsla(0, 0%, 98%, 0.3);
+      padding: 3rem;
+      border-radius: 4px;
+    }
+
     /* Utilities */
     .text-center {
       text-align: center;
@@ -115,14 +130,17 @@
       </section>
 
 
-      <section data-markdown data-background="images/backgrounds/content-bg.png">
-        ## How is Esri doing?
+      <section data-background="images/backgrounds/content-bg.png">
+        <h2>How is Esri doing?</h2>
 
-        - Reviewing products for compliance
-        - [Voluntary Product Accessibility Templates (VPATs)](https://www.esri.com/en-us/legal/accessibility/vpats)
-        - Fixing accessibility issues
-        - Building accessible components, features, and apps
-        - Sharing knowledge and best practices
+        <ul class="block-list">
+          <li>Reviewing products for compliance</li>
+          <li><a href="https://www.esri.com/en-us/legal/accessibility/vpats">Voluntary Product Accessibility Templates
+              (VPATs)</a></li>
+          <li>Fixing accessibility issues</li>
+          <li>Building accessible components, features, and apps</li>
+          <li>Sharing knowledge and best practices</li>
+        </ul>
       </section>
 
       <section data-markdown data-background="images/backgrounds/content-bg.png">
